@@ -8,15 +8,6 @@
 .env.*
 !.env.example
 
-# Agents IA
-CLAUDE.md
-claude.md
-AGENTS.md
-.claude/
-.agents/
-.cursor/
-skills-lock.json
-
 # Maven
 target/
 

@@ -1,5 +1,8 @@
 # Relais
 
+[![CI](https://github.com/gherriy/relais/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/gherriy/relais/actions/workflows/ci.yml)
+
+
 Relais est un service de notifications pour développeurs. Une application envoie un email avec un seul appel `POST /v1/notifications`. Relais met le message en file dans Kafka, l'envoie, réessaie en cas d'échec et garde l'historique de chaque tentative. Un tableau de bord Angular permet de suivre les envois et de gérer les clés d'API.
 
 > Projet en cours de construction. Cette version contient le socle : les trois applications démarrent, sans fonctionnalité métier pour l'instant.

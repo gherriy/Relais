@@ -1,3 +1,9 @@
 spring:
   application:
     name: relais-api
+  profiles:
+    default: dev
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate

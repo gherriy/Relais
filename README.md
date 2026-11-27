@@ -8,7 +8,8 @@ Relais est un service de notifications pour développeurs. Une application envoi
 
 - **Back-end** : Java 25, Spring Boot 4, Maven
 - **Front-end** : Angular 22, TypeScript strict, SCSS
-- **À venir** : PostgreSQL, Flyway, Apache Kafka, Spring Security, Docker Compose
+- **Infrastructure locale** : Docker Compose, PostgreSQL 18, Apache Kafka 4 (KRaft), Mailpit
+- **À venir** : Flyway, Spring Security
 
 ## Structure
 
@@ -17,16 +18,31 @@ relais/
 ├── pom.xml          pom parent Maven (version de Java et de Spring Boot)
 ├── relais-api/      API REST : comptes, clés d'API, réception des notifications
 ├── relais-envoi/    service d'envoi : lit Kafka, envoie les emails, réessaie
-└── relais-web/      tableau de bord Angular
+├── relais-web/      tableau de bord Angular
+└── docker-compose.yml   PostgreSQL, Kafka et Mailpit pour le développement
 ```
 
 ## Prérequis
 
 - Java 25
 - Node.js 24 et npm
+- Docker et Docker Compose
 - Maven n'est pas nécessaire : le projet fournit le Maven Wrapper (`./mvnw`)
 
 ## Lancer le projet
+
+### Démarrer l'environnement local
+
+```bash
+cp .env.example .env    # puis choisir un mot de passe PostgreSQL
+docker compose up -d
+```
+
+| Service | Adresse |
+|---|---|
+| PostgreSQL | localhost:5433 |
+| Kafka | localhost:9092 |
+| Mailpit (interface web) | http://localhost:8025 |
 
 ### Construire et tester les services Java
 

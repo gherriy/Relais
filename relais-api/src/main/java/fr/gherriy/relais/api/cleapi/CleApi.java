@@ -47,6 +47,16 @@ public class CleApi {
     protected CleApi() {
     }
 
+    public CleApi(Compte compte, String nom, Environnement environnement, String prefixe, String hash) {
+        this.id = UUID.randomUUID();
+        this.compte = compte;
+        this.nom = nom;
+        this.environnement = environnement;
+        this.prefixe = prefixe;
+        this.hash = hash;
+        this.creeLe = Instant.now();
+    }
+
     public UUID getId() {
         return id;
     }

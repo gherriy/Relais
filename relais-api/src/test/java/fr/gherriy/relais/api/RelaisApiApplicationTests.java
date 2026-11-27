@@ -20,7 +20,7 @@ class RelaisApiApplicationTests {
     void doitAppliquerLesMigrationsAuDemarrage(@Autowired Flyway flyway) {
         assertThat(flyway.info().applied())
                 .extracting(migration -> migration.getVersion().getVersion())
-                .containsExactly("1");
+                .containsExactly("1", "2");
     }
 
 }

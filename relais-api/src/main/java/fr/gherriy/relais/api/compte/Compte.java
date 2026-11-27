@@ -15,6 +15,9 @@ public class Compte {
     @Id
     private UUID id;
 
+    @Column(name = "nom_projet", nullable = false, length = 100)
+    private String nomProjet;
+
     @Column(nullable = false, unique = true)
     private String email;
 
@@ -27,9 +30,20 @@ public class Compte {
     protected Compte() {
 
     }
+    public Compte(String nomProjet, String email, String motDePasseHash) {
+        this.id = UUID.randomUUID();
+        this.nomProjet = nomProjet;
+        this.email = email;
+        this.motDePasseHash = motDePasseHash;
+        this.creeLe = Instant.now();
+    }
 
     public UUID getId() {
         return id;
+    }
+
+    public String getNomProjet() {
+        return nomProjet;
     }
 
     public String getEmail() {

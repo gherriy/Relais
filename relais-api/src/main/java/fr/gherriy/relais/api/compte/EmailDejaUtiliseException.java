@@ -7,5 +7,4 @@ public class EmailDejaUtiliseException extends RuntimeException {
     public EmailDejaUtiliseException(Throwable cause) {
         super("Un compte existe déjà avec cet email", cause);
     }
-    
 }
